@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script  type="text/javascript" src="https://codesandbox.io/public/sse-hooks/sse-hooks.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Alpinejs Template</title>
+    <script src="alpine.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <div style="display: grid;">
+        <div
+          x-data="{Title: 'Client Only',slides : [{id:1},{id:2},3,4,5,6,7]}"
+          style="grid-row: 1;grid-column-start: 2; grid-column-end: 3"
+        >
+          <h3 x-text="Title"></h3>
+          <template id="Test" x-for="slide in slides" :key="slide">
+            <div name="BLue" x-text="slide.id + Title"></div>
+          </template>
+        </div>
+        <div
+          x-data="{Title: 'Server/Client',slides : [1,2,3,4,5,6]}"
+          style="grid-row: 1;grid-column-start: 1; grid-column-end: 2"
+        >
+          <h3 x-text="Title">Server/Client</h3>
+          <template id="Test2" x-for="slide in slides" :key="slide">
+            <div name="BLue" x-text="slide"></div>
+          </template>
+          <div id="PINK" r-for-key="1">
+            1
+          </div>
+          <div id="PINK" r-for-key="2">
+            2
+          </div>
+          <div id="PINK" r-for-key="3">
+            3
+          </div>
+          <div id="PINK" r-for-key="4">
+            4
+          </div>
+          <div id="PINK" r-for-key="5">
+            5
+          </div>
+        </div>
+        <div style="grid-row: 1;grid-column-start: 3; grid-column-end: 4">
+          <h3>Server Only</h3>
+          <div id="PINK" r-for-key="1">
+            1
+          </div>
+          <div id="PINK" r-for-key="2">
+            2
+          </div>
+          <div id="PINK" r-for-key="3">
+            3
+          </div>
+          <div id="PINK" r-for-key="4">
+            4
+          </div>
+          <div id="PINK" r-for-key="5">
+            5
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </body>
+</html>
