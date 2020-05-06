@@ -4,7 +4,9 @@ date: 2019-4-10T00:34:55+00:00
 author: Sean
 layout: post
 categories:
-  - Blog, React, hooks
+  - Blog
+  - React
+  - hooks
 frontpage: true
 published: true
 ---

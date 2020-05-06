@@ -4,7 +4,8 @@ date: 2018-12-10T00:34:55+00:00
 author: Sean
 layout: post
 categories:
-  - Blog, React
+  - Blog
+  - React
 frontpage: true
 published: true
 ---

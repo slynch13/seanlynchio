@@ -5,6 +5,8 @@ author: Sean
 layout: post
 categories:
   - Blog
+  - React
+  - Hooks
 frontpage: true
 published: true
 ---

@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import './style.css'
+import Footer from './footer'
 
-import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
@@ -11,62 +12,38 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex-1 min-w-0">
+            <Link to={`/`}>
+              <h2 class="text-2xl font-bold leading-7 text-cyan-900 sm:text-3xl sm:leading-9 sm:truncate">
+                {title}
+              </h2>
+            </Link>
+          </div>
+
+        </div >
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
+        <div class="md:flex md:items-center md:justify-between sm:py-1 lg:py-4">
+          <div class="flex-1 min-w-0">
+            <Link to={`/`}>
+              <h2 class="text-2xl font-bold leading-7 text-cyan-900 sm:text-3xl sm:leading-9 sm:truncate">
+                {title}
+              </h2>
+            </Link>
+          </div>
+
+        </div>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <div className="container mx-auto bg-gray-50">
         <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div className="px-2">
+          <main>{children}</main>
+          <Footer></Footer>
+        </div>
       </div>
     )
   }
